@@ -12,11 +12,15 @@ def main():
     screen.fill("BLACK")  # Fill the screen with black color
     pygame.display.flip()  # Update the display to show the filled screen
 
+    pyclock = pygame.time.Clock()
+    dt = 0
+    FPS = 60  # Frames per second
 
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return  # Exit the game if the quit event is detected
-            
+        dt = pyclock.tick(FPS) / 1000; 
+
 if __name__ == "__main__":
     main()
